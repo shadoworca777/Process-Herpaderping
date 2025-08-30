@@ -10,6 +10,21 @@ mesbox.exeというファイルが悪意のあるファイルだとする
 5. リモートスレッドの作成からの実行
 6. ハンドルを閉じる
 
+### 流れ図
+```
+mesbox.exe ────→ output.exe
+                  ↓
+         [NtCreateSection + SEC_IMAGE]
+                  ↓
+         [NtCreateProcessEx]
+                  ↓
+   +───> 書き換え (OverwriteFileContentsWithPattern)
+   |
+   +───> Set remote process parameters
+   |
+   └───> NtCreateThreadEx → 実行開始
+```
+
 ## 使い方
 ```
 > git clone https://github.com/shadoworca777/Process-Herpaderping.git
