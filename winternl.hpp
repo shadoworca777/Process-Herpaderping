@@ -1,4 +1,4 @@
-#ifndef _NTRTL_HPP
+#pragma once
 
 #include <Windows.h>
 
@@ -472,5 +472,3 @@ typedef struct _RTL_USER_PROCESS_PARAMETERS {
     ULONG     ProcessGroupId;
     ULONG     LoaderThreads;
 } RTL_USER_PROCESS_PARAMETERS, *PRTL_USER_PROCESS_PARAMETERS;
-
-#endif
