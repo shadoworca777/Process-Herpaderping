@@ -130,5 +130,8 @@ int main() {
 
     printf("Created thread, TID %lu\n", GetThreadId(threadHandle));
 
+    CloseHandle(threadHandle);
+
     return 0;
 }
+
