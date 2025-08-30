@@ -92,7 +92,7 @@ int main() {
         )
     ) return -1;
 
-    printf("Writing process parameters, remote PEB ProcessParameters 0x%p", Add2Ptr(pbi.PebBaseAddress, FIELD_OFFSET(PEB, ProcessParameters)));
+    printf("Writing process parameters, remote PEB ProcessParameters 0x%p\n", Add2Ptr(pbi.PebBaseAddress, FIELD_OFFSET(PEB, ProcessParameters)));
 
     if (!WriteRemoteProcessParameters(
             processHandle,
@@ -134,5 +134,6 @@ int main() {
 
     return 0;
 }
+
 
 
