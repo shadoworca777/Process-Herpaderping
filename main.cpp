@@ -100,7 +100,7 @@ int main() {
             nullptr,
             nullptr,
             L"\"output.exe\"",
-            nullptr,//NtCurrentPeb()->ProcessParameters->Environment,
+            NtCurrentTeb()->ProcessEnvironmenBlock,
             L"output.exe",
             L"WinSta0\\Default",
             nullptr,
@@ -134,4 +134,5 @@ int main() {
 
     return 0;
 }
+
 
